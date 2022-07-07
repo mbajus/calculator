@@ -43,26 +43,20 @@ def enter(lst_nums):
     return True
 
 def brackets(eq):
-    print(eq)
     while len(eq) != 1:
         if eq.count("(") != 0:
             start = end = 0
-            print(eq)
             end = eq.index(")")
             while eq[start:end].count("(") != 0:
                 start += 1
-            print(eq[start:end])
             eq[start-1] = math(eq[start:end])         
             del eq[start:end+1]
-            print(eq)
         else:
             eq[0] = math(eq)
             del eq[1:]
-            print(eq)
     return eq[0]    
 
 def math(eq):
-    print(eq, " \n ")
     i = 0
     while len(eq) != 1:
         if eq.count("*") + eq.count("/") != 0:
@@ -72,14 +66,17 @@ def math(eq):
                 del eq[i:i+2]
                 i = 0
             elif eq[i] == "/":
-                eq[i-1] = eq[i-1] / eq[i+1]
-                del eq[i:i+2]
-                i = 0
-            print(eq)                    
+                if eq[i+1] != 0:
+                    eq[i-1] = eq[i-1] / eq[i+1]
+                    del eq[i:i+2]
+                    i = 0
+                else:
+                    sg.popup_ok("Error! Division by zero. RLY?!.\n", background_color = "blue1", no_titlebar = True)
+                    del eq
+                    return 0                
         else:
             eq[0] = eq[0] + eq[1]
-            del eq[1]
-            print(eq)        
+            del eq[1]     
     return eq[0]
 
 def split(lst_nums):    
