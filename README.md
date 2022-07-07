@@ -1,5 +1,5 @@
 # Calculator
-> Simple calculator made with PySimpleGUI. which features addition, subtraction, multiplication, division, order of operations and equations.
+> Simple calculator made with PySimpleGUI, which features addition, subtraction, multiplication, division, order of operations and equations.
 
 ## Table of contents
 * [General info](#general-info)
@@ -13,7 +13,7 @@
 It was made to train Python skills. This calculator features more than every calculator from Youtube etc, it knows the order of operations and equations. The input is veryfied, so if you do something mathicaly uncorrect you will be informed.
 
 ## Screenshots
-![Example screenshot](./img/1.png)
+![Example screenshot](./img/img1.PNG)
 
 
 ## Technologies
